@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Page</title>
+</head>
+<body>	
+Check the Console.
+<script>
+
+class Person{
+	constructor(name){
+		this._name = name;
+	}
+	get name(){
+		return this._name;
+	}
+	set name(name){
+		this._name=name;
+	}
+}
+
+
+class Student extends Person{
+	constructor(name,age){
+		super(name);
+		this._age = age;
+	}
+	get age(){
+		return this._age;
+	}
+	set age(age){
+		if(age < 15) {
+			throw "Age must be more than 14";
+		}
+		this._age=age;
+	}
+	static welcome(){
+		console.log('Static welcome');
+	}
+	
+}
+
+let s1 = new Student('Manish', 35);
+console.log(s1);
+console.log(s1.name);
+</script>
+</html>
